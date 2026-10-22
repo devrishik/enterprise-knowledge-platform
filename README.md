@@ -133,6 +133,12 @@ python scripts/benchmark.py --tenant acme                               # latenc
 
 (or use the UI: **Evaluation → Run evaluation**)
 
+If `data/sample_documents/onboarding_guide.docx` is not in the tree yet, create the DOCX and PDF samples first:
+
+```bash
+python scripts/generate_sample_docs.py
+```
+
 ## Local development (without Docker)
 
 Requirements: Python 3.11+, Node 20+, PostgreSQL (pgvector optional — see below).

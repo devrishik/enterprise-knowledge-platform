@@ -1,10 +1,13 @@
 # Diagrams
 
-Interactive, self-contained HTML diagrams generated with
+Interactive HTML diagrams generated with
 [Archify](https://github.com/tt-a1i/archify) from versioned JSON intermediate
-representations (IR). Open the HTML files directly in any browser — no server
-or network needed; they embed their own viewer (themes, pan/zoom, focus views,
-PNG/SVG export).
+representations (IR). Open [rag-workflow.html](rag-workflow.html) directly in a
+browser. It joins `rag-workflow.part1.js` through `rag-workflow.part4.js` and
+writes the Archify artifact (sha256
+`de525b307248de642e355cb34708596269e3ba25cebc01fd10d8567630c43659`, 775172
+bytes). No server or network is needed. The viewer supports themes, pan/zoom,
+focus views, and PNG/SVG export.
 
 | File | Contents |
 |---|---|
