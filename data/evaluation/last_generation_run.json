@@ -1,0 +1,1454 @@
+{
+  "run_id": "b78061fa-1009-47ac-9540-b0f679cf17e4",
+  "strategy": "generation",
+  "finished_at": "2026-10-22T10:15:22.114077+00:00",
+  "summary": {
+    "evaluator": "llm_judge+rules",
+    "benchmarks": {
+      "total_query": {
+        "p50_ms": 13432.48,
+        "p95_ms": 23237.14
+      }
+    },
+    "avg_relevancy": 4.1053,
+    "question_count": 19,
+    "answerable_count": 16,
+    "faithfulness_rate": 0.8421,
+    "avg_relevancy_answerable": 4.5,
+    "citation_correctness_rate": 0.8947,
+    "faithfulness_rate_answerable": 0.8125
+  },
+  "per_question": [
+    {
+      "model": "qwen2.5:32b",
+      "answer": "Employees are entitled to 22 days of paid annual leave per leave year.",
+      "context": [
+        {
+          "text": "Annual Leave Entitlement\nAnnual Leave Entitlement\nFull-time employees are entitled to 22 days of paid annual leave per leave\nyear, accruing at approximately 1.83 days per month of service. This Leave\nPolicy is the authoritative source for leave entitlements and supersedes any\nsummary in other documents.",
+          "score": 1.0,
+          "section": "Annual Leave Entitlement",
+          "chunk_id": "73a1b5a3-420e-4136-9e15-cf2e3dce80bd",
+          "page_number": null,
+          "document_filename": "leave_policy.md"
+        },
+        {
+          "text": "Sick Leave\nSick Leave\nEmployees are entitled to 12 paid sick days per year. A medical certificate is\nrequired for any absence longer than three consecutive working days. Sick\nleave does not carry over between years.",
+          "score": 0.9991,
+          "section": "Sick Leave",
+          "chunk_id": "1312d38d-016e-45a6-b394-7b69bfdf51bd",
+          "page_number": null,
+          "document_filename": "leave_policy.md"
+        },
+        {
+          "text": "Paid Time Off\nPaid Time Off\nEmployees receive 18 days of paid time off per calendar year, accruing at\n1.5 days per month. Unused days may be carried over, subject to the detailed\nrules in the Leave Policy document. Public holidays are published annually and\ndo not count against paid time off.",
+          "score": 0.997,
+          "section": "Paid Time Off",
+          "chunk_id": "95b348b4-310b-421f-b519-c17aff18b351",
+          "page_number": null,
+          "document_filename": "employee_handbook.md"
+        },
+        {
+          "text": "Parental Leave\nParental Leave\nPrimary caregivers are entitled to 16 weeks of fully paid parental leave.\nSecondary caregivers are entitled to 4 weeks of fully paid parental leave,\nwhich may be taken in blocks of no less than one week within 12 months of the\nchild's arrival.",
+          "score": 0.7767,
+          "section": "Parental Leave",
+          "chunk_id": "62366643-17f7-4f8e-8a99-251e8909bab6",
+          "page_number": null,
+          "document_filename": "leave_policy.md"
+        },
+        {
+          "text": "Carryover\nCarryover\nA maximum of 5 unused annual leave days may be carried over into the next\nleave year. Carried-over days must be used before 31 March of the following\nyear, after which they expire.",
+          "score": 0.663,
+          "section": "Carryover",
+          "chunk_id": "bef5951f-f320-4258-8162-3217a1428ee7",
+          "page_number": null,
+          "document_filename": "leave_policy.md"
+        }
+      ],
+      "question": "How many days of paid annual leave are employees entitled to?",
+      "trace_id": "d800b776-9b8d-462a-9e95-f698b6995317",
+      "relevancy": {
+        "mode": "llm_judge",
+        "score": 5,
+        "explanation": "The answer directly states the number of days of paid annual leave employees are entitled to, which fully addresses the question asked."
+      },
+      "question_id": "c13e25cf-88a7-4c8b-8e1e-e85ae98a650b",
+      "faithfulness": {
+        "mode": "llm_judge",
+        "faithful": true,
+        "explanation": "The ANSWER correctly states that employees are entitled to 22 days of paid annual leave per leave year, which is directly supported by the CONTEXT.",
+        "supported_claims": 1,
+        "unsupported_claims": 0
+      },
+      "question_type": "direct",
+      "total_latency_ms": 13990.67,
+      "expected_answerable": true,
+      "citation_correctness": {
+        "pass": true,
+        "citation_count": 1,
+        "refusal_behavior_correct": true,
+        "citations_reference_retrieved_chunks": true
+      },
+      "insufficient_evidence": false,
+      "expected_doc_filenames": [
+        "leave_policy.md"
+      ],
+      "expected_answer_keywords": [
+        "22",
+        "annual leave"
+      ]
+    },
+    {
+      "model": "qwen2.5:32b",
+      "answer": "The daily meal per diem is 60 USD for domestic travel and 75 USD for international travel.",
+      "context": [
+        {
+          "text": "Meal Per Diem\nMeal Per Diem\nThe daily meal per diem is 60 USD for domestic travel and 75 USD for\ninternational travel. No receipts are required for per diem claims. Team meals\nduring travel follow the per diem of the most senior attendee's destination.",
+          "score": 1.0,
+          "section": "Meal Per Diem",
+          "chunk_id": "fe4d545c-df1d-4dd4-be22-bf8baafe7da7",
+          "page_number": null,
+          "document_filename": "expense_policy.md"
+        },
+        {
+          "text": "Accommodation\nAccommodation\nHotel reimbursement is capped at 180 USD per night in domestic cities and 240\nUSD per night in international cities. Higher amounts require pre-approval\nfrom Finance at least 3 working days before booking.",
+          "score": 0.0232,
+          "section": "Accommodation",
+          "chunk_id": "dc1f80bd-7cfe-49fc-9728-793b4173188c",
+          "page_number": null,
+          "document_filename": "expense_policy.md"
+        },
+        {
+          "text": "Visas and Documentation\nVisas and Documentation\nVisa fees and required vaccinations are reimbursable with receipts.\n  Passport fees are personal and not reimbursable. The travel desk assists\n  with visa applications; submit requests at least 6 weeks before departure.\n  Meal per diems and hotel caps follow the Expense Policy.",
+          "score": 0.0194,
+          "section": "Visas and Documentation",
+          "chunk_id": "4380b8db-4e34-415d-8450-20c08af56b87",
+          "page_number": null,
+          "document_filename": "travel_policy.html"
+        },
+        {
+          "text": "Flights and Rail\nFlights and Rail\nDomestic flights must be economy class. Business class is permitted for single\nlegs longer than 6 hours with VP approval. Rail travel is encouraged for\njourneys under 4 hours where available.",
+          "score": 0.0,
+          "section": "Flights and Rail",
+          "chunk_id": "63097a14-b11c-46b7-99b0-7f1b52678f18",
+          "page_number": null,
+          "document_filename": "expense_policy.md"
+        },
+        {
+          "text": "Travel Policy\nTravel Policy",
+          "score": 0.0,
+          "section": "Travel Policy",
+          "chunk_id": "401f0307-2832-4091-a29f-b4ada014b3f0",
+          "page_number": null,
+          "document_filename": "travel_policy.html"
+        }
+      ],
+      "question": "What is the daily meal per diem for domestic and international travel?",
+      "trace_id": "f21b2c20-286f-4079-b37f-7ffabab4feda",
+      "relevancy": {
+        "mode": "llm_judge",
+        "score": 5,
+        "explanation": "The answer directly provides the specific information requested about the daily meal per diem for both domestic and international travel."
+      },
+      "question_id": "c2409aac-5566-4756-8354-c6a826910b41",
+      "faithfulness": {
+        "mode": "llm_judge",
+        "faithful": true,
+        "explanation": "The ANSWER correctly states the daily meal per diem for both domestic and international travel as provided in the CONTEXT, with no unsupported claims.",
+        "supported_claims": 2,
+        "unsupported_claims": 0
+      },
+      "question_type": "numerical",
+      "total_latency_ms": 12022.05,
+      "expected_answerable": true,
+      "citation_correctness": {
+        "pass": true,
+        "citation_count": 1,
+        "refusal_behavior_correct": true,
+        "citations_reference_retrieved_chunks": true
+      },
+      "insufficient_evidence": false,
+      "expected_doc_filenames": [
+        "expense_policy.md"
+      ],
+      "expected_answer_keywords": [
+        "60",
+        "75",
+        "per diem"
+      ]
+    },
+    {
+      "model": "qwen2.5:32b",
+      "answer": "Suspected security incidents must be reported within 24 hours of discovery.",
+      "context": [
+        {
+          "text": "Incident Reporting\nIncident Reporting\nSuspected security incidents, lost devices, or phishing messages must be\nreported to security@acme.test within 24 hours of discovery. Do not attempt to\ninvestigate or contain incidents yourself unless you are part of the Security\nOperations team.",
+          "score": 0.9998,
+          "section": "Incident Reporting",
+          "chunk_id": "f8ecd0f9-f765-4041-a55c-a3ed500d1565",
+          "page_number": null,
+          "document_filename": "security_policy.md"
+        },
+        {
+          "text": "Escalation and Help\nEscalation and Help\nFor HR questions contact People Operations through the HR portal. For equipment or access problems use the IT helpdesk. Security incidents follow the reporting duties in the Security Policy and must be reported within 24 hours.",
+          "score": 0.9991,
+          "section": "Escalation and Help",
+          "chunk_id": "45d7e57a-5b14-464f-85c0-54c6b1ebbd99",
+          "page_number": null,
+          "document_filename": "onboarding_guide.docx"
+        },
+        {
+          "text": "Security Requirements\nSecurity Requirements\nRemote workers must connect through the corporate VPN for all work involving\ninternal systems. Personal printers may not be used for company documents.\nDevices must remain locked when unattended, and screens must not be visible\nfrom public spaces. See the Security Policy for incident reporting duties.",
+          "score": 0.0122,
+          "section": "Security Requirements",
+          "chunk_id": "9ebc4f3d-5fc5-4ef8-89a1-bda1936caecc",
+          "page_number": null,
+          "document_filename": "remote_work_policy.md"
+        },
+        {
+          "text": "Anti-Bribery and Compliance\nAnti-Bribery and Compliance\nAcme Corp complies with all applicable anti-bribery laws. No employee may\noffer, give, or authorize any payment or gift intended to improperly influence\na business decision. Suspected violations must be reported through the\nanonymous ethics hotline.",
+          "score": 0.0048,
+          "section": "Anti-Bribery and Compliance",
+          "chunk_id": "a960b1e9-8213-4a7f-8464-e908a0062e0b",
+          "page_number": null,
+          "document_filename": "employee_handbook.md"
+        },
+        {
+          "text": "Software Requests\nSoftware Requests\nOnly software from the approved catalog may be installed on corporate devices.\nRequests for new software are submitted through the IT portal and are reviewed\nfor security and licensing compliance within 10 working days. Installing\nunapproved software violates the Security Policy.",
+          "score": 0.0005,
+          "section": "Software Requests",
+          "chunk_id": "bb55e146-3702-402a-aeca-006a9ea1ce18",
+          "page_number": null,
+          "document_filename": "it_policy.md"
+        }
+      ],
+      "question": "How quickly must suspected security incidents be reported?",
+      "trace_id": "966c62a5-2bc9-466e-96ba-febe21c3d9ba",
+      "relevancy": {
+        "mode": "llm_judge",
+        "score": 5,
+        "explanation": "The answer directly addresses the question by providing a specific timeframe for reporting suspected security incidents."
+      },
+      "question_id": "eddd8873-3bcc-4dd0-b296-4a80079bdde6",
+      "faithfulness": {
+        "mode": "llm_judge",
+        "faithful": true,
+        "explanation": "The claim that suspected security incidents must be reported within 24 hours of discovery is directly supported by the CONTEXT.",
+        "supported_claims": 1,
+        "unsupported_claims": 0
+      },
+      "question_type": "direct",
+      "total_latency_ms": 14066.1,
+      "expected_answerable": true,
+      "citation_correctness": {
+        "pass": true,
+        "citation_count": 2,
+        "refusal_behavior_correct": true,
+        "citations_reference_retrieved_chunks": true
+      },
+      "insufficient_evidence": false,
+      "expected_doc_filenames": [
+        "security_policy.md"
+      ],
+      "expected_answer_keywords": [
+        "24",
+        "security@acme.test"
+      ]
+    },
+    {
+      "model": "qwen2.5:32b",
+      "answer": "The probation period for new employees lasts 90 days.",
+      "context": [
+        {
+          "text": "Probation Period\nProbation Period\nThe probation period lasts 90 days. A structured review happens at day 30, day 60, and day 90 with written feedback. Remote work eligibility begins after successful completion of probation, as defined in the Remote Work Policy.",
+          "score": 0.9956,
+          "section": "Probation Period",
+          "chunk_id": "6af097c1-2310-4d53-bc6f-357ba8eb36ca",
+          "page_number": null,
+          "document_filename": "onboarding_guide.docx"
+        },
+        {
+          "text": "Eligibility\nEligibility\nRemote work is available to all permanent employees after completing their\nprobation period of 90 days. Roles that require physical presence, such as\nfacilities and hardware lab staff, are excluded.",
+          "score": 0.9895,
+          "section": "Eligibility",
+          "chunk_id": "56101813-7cb4-42c0-b3d0-d8b6734421b5",
+          "page_number": null,
+          "document_filename": "remote_work_policy.md"
+        },
+        {
+          "text": "First Week\nFirst Week\nDuring the first week, new employees complete mandatory training: Security Awareness (2 hours), Code of Conduct (1 hour), and Data Protection Basics (1 hour). Manager one-to-ones happen twice in the first week, and a buddy from the team is assigned for the first month.",
+          "score": 0.2339,
+          "section": "First Week",
+          "chunk_id": "7d1d68f2-c832-4979-8ff1-28af5edc633d",
+          "page_number": null,
+          "document_filename": "onboarding_guide.docx"
+        },
+        {
+          "text": "Annual Leave Entitlement\nAnnual Leave Entitlement\nFull-time employees are entitled to 22 days of paid annual leave per leave\nyear, accruing at approximately 1.83 days per month of service. This Leave\nPolicy is the authoritative source for leave entitlements and supersedes any\nsummary in other documents.",
+          "score": 0.0294,
+          "section": "Annual Leave Entitlement",
+          "chunk_id": "73a1b5a3-420e-4136-9e15-cf2e3dce80bd",
+          "page_number": null,
+          "document_filename": "leave_policy.md"
+        },
+        {
+          "text": "Requesting Leave\nRequesting Leave\nAll leave requests must be submitted through the HR portal at least 5 working\ndays before the intended start date for periods up to one week, and 20 working\ndays in advance for longer periods. Managers respond within 5 working days.",
+          "score": 0.0259,
+          "section": "Requesting Leave",
+          "chunk_id": "5ae5a1d8-9dc3-4483-9084-e9746ac74a8b",
+          "page_number": null,
+          "document_filename": "leave_policy.md"
+        }
+      ],
+      "question": "How long is the probation period for new employees?",
+      "trace_id": "d4742626-3790-4b99-915d-ac70979fcd2d",
+      "relevancy": {
+        "mode": "llm_judge",
+        "score": 5,
+        "explanation": "The answer directly states the length of the probation period, which is exactly what the question asked for."
+      },
+      "question_id": "0a35778b-fd7e-4848-9f58-18503f2346c2",
+      "faithfulness": {
+        "mode": "llm_judge",
+        "faithful": true,
+        "explanation": "The claim that the probation period lasts 90 days is directly supported by the context.",
+        "supported_claims": 1,
+        "unsupported_claims": 0
+      },
+      "question_type": "direct",
+      "total_latency_ms": 10188.22,
+      "expected_answerable": true,
+      "citation_correctness": {
+        "pass": true,
+        "citation_count": 1,
+        "refusal_behavior_correct": true,
+        "citations_reference_retrieved_chunks": true
+      },
+      "insufficient_evidence": false,
+      "expected_doc_filenames": [
+        "onboarding_guide.docx",
+        "remote_work_policy.md"
+      ],
+      "expected_answer_keywords": [
+        "90",
+        "probation"
+      ]
+    },
+    {
+      "model": "qwen2.5:32b",
+      "answer": "240 USD",
+      "context": [
+        {
+          "text": "Accommodation\nAccommodation\nHotel reimbursement is capped at 180 USD per night in domestic cities and 240\nUSD per night in international cities. Higher amounts require pre-approval\nfrom Finance at least 3 working days before booking.",
+          "score": 0.9999,
+          "section": "Accommodation",
+          "chunk_id": "dc1f80bd-7cfe-49fc-9728-793b4173188c",
+          "page_number": null,
+          "document_filename": "expense_policy.md"
+        },
+        {
+          "text": "Non-Reimbursable Items\nNon-Reimbursable Items\nTraffic fines, airline lounge memberships, personal seat upgrades, hotel mini-\nbar charges, and expenses lacking itemised receipts are not reimbursable.",
+          "score": 0.0003,
+          "section": "Non-Reimbursable Items",
+          "chunk_id": "bbd4987f-0759-4972-a87e-b4e731e22d0a",
+          "page_number": null,
+          "document_filename": "expense_policy.md"
+        },
+        {
+          "text": "Meal Per Diem\nMeal Per Diem\nThe daily meal per diem is 60 USD for domestic travel and 75 USD for\ninternational travel. No receipts are required for per diem claims. Team meals\nduring travel follow the per diem of the most senior attendee's destination.",
+          "score": 0.0002,
+          "section": "Meal Per Diem",
+          "chunk_id": "fe4d545c-df1d-4dd4-be22-bf8baafe7da7",
+          "page_number": null,
+          "document_filename": "expense_policy.md"
+        },
+        {
+          "text": "Visas and Documentation\nVisas and Documentation\nVisa fees and required vaccinations are reimbursable with receipts.\n  Passport fees are personal and not reimbursable. The travel desk assists\n  with visa applications; submit requests at least 6 weeks before departure.\n  Meal per diems and hotel caps follow the Expense Policy.",
+          "score": 0.0002,
+          "section": "Visas and Documentation",
+          "chunk_id": "4380b8db-4e34-415d-8450-20c08af56b87",
+          "page_number": null,
+          "document_filename": "travel_policy.html"
+        },
+        {
+          "text": "Advance Booking\nAdvance Booking\nDomestic trips should be booked at least 14 days in advance and\n  international trips at least 21 days in advance to secure corporate fares.\n  Changes made within 72 hours of departure require a reason code in the\n  expense system.",
+          "score": 0.0001,
+          "section": "Advance Booking",
+          "chunk_id": "01e88be4-422b-47d7-ba7f-6e5bf1a1070a",
+          "page_number": null,
+          "document_filename": "travel_policy.html"
+        }
+      ],
+      "question": "What is the maximum hotel reimbursement per night for international cities?",
+      "trace_id": "00c0c981-b2f0-4703-a17f-0dde7d7a611a",
+      "relevancy": {
+        "mode": "llm_judge",
+        "score": 4,
+        "explanation": "The answer provides a specific amount which could be the maximum hotel reimbursement per night for international cities, but it does not specify if this amount applies to all international cities or is an example for a particular city or region. The answer is relevant but could be more comprehensive"
+      },
+      "question_id": "8efcf9d0-0c13-44f4-950c-5dde776e23a1",
+      "faithfulness": {
+        "mode": "llm_judge",
+        "faithful": true,
+        "explanation": "The ANSWER correctly states that the maximum hotel reimbursement per night for international cities is 240 USD, which is directly supported by the CONTEXT.",
+        "supported_claims": 1,
+        "unsupported_claims": 0
+      },
+      "question_type": "numerical",
+      "total_latency_ms": 10966.14,
+      "expected_answerable": true,
+      "citation_correctness": {
+        "pass": true,
+        "citation_count": 1,
+        "refusal_behavior_correct": true,
+        "citations_reference_retrieved_chunks": true
+      },
+      "insufficient_evidence": false,
+      "expected_doc_filenames": [
+        "expense_policy.md"
+      ],
+      "expected_answer_keywords": [
+        "240",
+        "hotel"
+      ]
+    },
+    {
+      "model": "qwen2.5:32b",
+      "answer": "I couldn't find sufficient evidence in the available documents to answer this question.",
+      "context": [
+        {
+          "text": "ACME CORP BENEFITS SUMMARY\n===========================\nThis plain-text summary gives an overview of the benefits offered to full-time\nemployees of Acme Corp. Enrolment happens during onboarding and during the\nannual open enrolment window each November.\nHEALTH INSURANCE\nAcme Corp offers a default Preferred Provider Organisation (PPO) health plan\ncovering employees and their dependents. The company pays 80 percent of the\nemployee premium and 60 percent of dependent premiums. Dental and vision\ncoverage are included at no additional cost. The annual deductible is 500 USD\nfor in-network care.\nRETIREMENT\nEmployees are auto-enrolled in the 401(k) retirement plan at a 5 percent\ncontribution rate. Acme Corp matches 100 percent of the first 5 percent of\ncontributions, effectively doubling that portion of savings. Vesting is\nimmediate.\nLIFE AND DISABILITY INSURANCE\nGroup life insurance of two times annual salary and long-term disability\ncoverage at 60 percent of salary are provided at no cost. Supplemental coverage\ncan be purchased during open enrolment.\nWELLNESS",
+          "score": 0.007,
+          "section": null,
+          "chunk_id": "c4a38d4a-9ed9-4905-87f2-385ba06f664c",
+          "page_number": null,
+          "document_filename": "benefits_summary.txt"
+        },
+        {
+          "text": "Welcome\nWelcome\nWelcome to Acme Corp. This handbook summarises the core policies that apply to\nall full-time employees. Where this handbook conflicts with a dedicated policy\ndocument, the dedicated policy document is considered authoritative, and the\ndiscrepancy should be reported to People Operations.",
+          "score": 0.0002,
+          "section": "Welcome",
+          "chunk_id": "24517a55-90fa-4852-8607-7db7b8555eb8",
+          "page_number": null,
+          "document_filename": "employee_handbook.md"
+        },
+        {
+          "text": "Annual Leave Entitlement\nAnnual Leave Entitlement\nFull-time employees are entitled to 22 days of paid annual leave per leave\nyear, accruing at approximately 1.83 days per month of service. This Leave\nPolicy is the authoritative source for leave entitlements and supersedes any\nsummary in other documents.",
+          "score": 0.0001,
+          "section": "Annual Leave Entitlement",
+          "chunk_id": "73a1b5a3-420e-4136-9e15-cf2e3dce80bd",
+          "page_number": null,
+          "document_filename": "leave_policy.md"
+        },
+        {
+          "text": "Expense Policy\nExpense Policy",
+          "score": 0.0,
+          "section": "Expense Policy",
+          "chunk_id": "72032508-324e-4706-b203-b688960e4c0f",
+          "page_number": null,
+          "document_filename": "expense_policy.md"
+        },
+        {
+          "text": "Leave Policy\nLeave Policy",
+          "score": 0.0,
+          "section": "Leave Policy",
+          "chunk_id": "6372776d-1524-44cd-8acf-be0f1616728c",
+          "page_number": null,
+          "document_filename": "leave_policy.md"
+        }
+      ],
+      "question": "How much does the company match in retirement contributions?",
+      "trace_id": "21f6b818-d074-4017-8d8f-8f07d29d2f78",
+      "relevancy": {
+        "mode": "llm_judge",
+        "score": 2,
+        "explanation": "The answer acknowledges the inability to provide specific information regarding the company's retirement contribution matching policy, which is somewhat relevant. However, it does not provide the specific information requested about the amount of matching contributions."
+      },
+      "question_id": "4125a432-4778-47f1-bccd-77f5d7088ec4",
+      "faithfulness": {
+        "mode": "llm_judge",
+        "faithful": false,
+        "explanation": "The ANSWER claims that there is insufficient evidence to answer the question, but the CONTEXT does provide information about the company's retirement contribution match, stating that Acme Corp matches 100 percent of the first 5 percent of contributions.",
+        "supported_claims": 0,
+        "unsupported_claims": 1
+      },
+      "question_type": "numerical",
+      "total_latency_ms": 4109.28,
+      "expected_answerable": true,
+      "citation_correctness": {
+        "pass": false,
+        "citation_count": 0,
+        "refusal_behavior_correct": false,
+        "citations_reference_retrieved_chunks": true
+      },
+      "insufficient_evidence": true,
+      "expected_doc_filenames": [
+        "benefits_summary.txt"
+      ],
+      "expected_answer_keywords": [
+        "5",
+        "401(k)",
+        "match"
+      ]
+    },
+    {
+      "model": "qwen2.5:32b",
+      "answer": "Premium economy is permitted for single legs of 6 hours or longer. Business class requires VP approval regardless of flight length.",
+      "context": [
+        {
+          "text": "Class of Service\nClass of Service\nFlights under 6 hours must be economy class. For single legs of 6 hours\n  or longer, premium economy is permitted. Business class requires VP approval\n  regardless of flight length.",
+          "score": 0.9994,
+          "section": "Class of Service",
+          "chunk_id": "0a3c9177-8fe2-4cd4-8e9b-cba563cf6252",
+          "page_number": null,
+          "document_filename": "travel_policy.html"
+        },
+        {
+          "text": "Flights and Rail\nFlights and Rail\nDomestic flights must be economy class. Business class is permitted for single\nlegs longer than 6 hours with VP approval. Rail travel is encouraged for\njourneys under 4 hours where available.",
+          "score": 0.9943,
+          "section": "Flights and Rail",
+          "chunk_id": "63097a14-b11c-46b7-99b0-7f1b52678f18",
+          "page_number": null,
+          "document_filename": "expense_policy.md"
+        },
+        {
+          "text": "General Principles\nGeneral Principles\nExpenses must be actual, reasonable, business-related, and supported by\nitemised receipts. Expenses submitted more than 60 days after they were\nincurred require CFO approval.",
+          "score": 0.0006,
+          "section": "General Principles",
+          "chunk_id": "5d3349ca-5c85-41ed-89c9-817fac3c6021",
+          "page_number": null,
+          "document_filename": "expense_policy.md"
+        },
+        {
+          "text": "Booking Channels\nBooking Channels\nAll business travel must be booked through the corporate travel portal.\n  Bookings made outside the portal are not reimbursable unless the portal was\n  unavailable and the trip was pre-approved by Finance.",
+          "score": 0.0005,
+          "section": "Booking Channels",
+          "chunk_id": "bc69cff6-cc1b-4ba3-92d6-8f27fe1141db",
+          "page_number": null,
+          "document_filename": "travel_policy.html"
+        },
+        {
+          "text": "Accommodation\nAccommodation\nHotel reimbursement is capped at 180 USD per night in domestic cities and 240\nUSD per night in international cities. Higher amounts require pre-approval\nfrom Finance at least 3 working days before booking.",
+          "score": 0.0003,
+          "section": "Accommodation",
+          "chunk_id": "dc1f80bd-7cfe-49fc-9728-793b4173188c",
+          "page_number": null,
+          "document_filename": "expense_policy.md"
+        }
+      ],
+      "question": "For flights, when is premium economy permitted and when does business class require approval?",
+      "trace_id": "97b35a5d-581e-4729-acf9-67824c4f237e",
+      "relevancy": {
+        "mode": "llm_judge",
+        "score": 5,
+        "explanation": "The answer directly addresses both parts of the question, specifying the conditions under which premium economy is permitted and when business class requires approval."
+      },
+      "question_id": "ebf5ff0b-0379-4364-a707-2849a25d5073",
+      "faithfulness": {
+        "mode": "llm_judge",
+        "faithful": true,
+        "explanation": "Both claims in the ANSWER are directly supported by the CONTEXT.",
+        "supported_claims": 2,
+        "unsupported_claims": 0
+      },
+      "question_type": "multi_hop",
+      "total_latency_ms": 14455.59,
+      "expected_answerable": true,
+      "citation_correctness": {
+        "pass": true,
+        "citation_count": 1,
+        "refusal_behavior_correct": true,
+        "citations_reference_retrieved_chunks": true
+      },
+      "insufficient_evidence": false,
+      "expected_doc_filenames": [
+        "travel_policy.html"
+      ],
+      "expected_answer_keywords": [
+        "6 hours",
+        "premium economy",
+        "business class",
+        "VP"
+      ]
+    },
+    {
+      "model": "qwen2.5:32b",
+      "answer": "Production passwords need to be rotated every 90 days and must be at least 12 characters long.",
+      "context": [
+        {
+          "text": "Passwords\nPasswords\nPasswords must be at least 12 characters long and must not reuse any of the\nprevious 10 passwords. Password rotation is required every 90 days for\naccounts with access to production systems and every 365 days for standard\naccounts. Password managers approved by IT are the recommended storage.",
+          "score": 0.9999,
+          "section": "Passwords",
+          "chunk_id": "30bc4b7e-1b1a-46bc-b9d4-a3f06fd49ea1",
+          "page_number": null,
+          "document_filename": "security_policy.md"
+        },
+        {
+          "text": "First 90 Days Checklist\nFirst 90 Days Checklist\nComplete security and conduct training\nSet up the password manager and enrol MFA devices\nMeet all direct stakeholders introduced by your manager\nAgree on goals for the first quarter",
+          "score": 0.019,
+          "section": "First 90 Days Checklist",
+          "chunk_id": "52c73a2f-3381-4a2f-936a-1d15bed2dccb",
+          "page_number": null,
+          "document_filename": "onboarding_guide.docx"
+        },
+        {
+          "text": "Requesting Leave\nRequesting Leave\nAll leave requests must be submitted through the HR portal at least 5 working\ndays before the intended start date for periods up to one week, and 20 working\ndays in advance for longer periods. Managers respond within 5 working days.",
+          "score": 0.0026,
+          "section": "Requesting Leave",
+          "chunk_id": "5ae5a1d8-9dc3-4483-9084-e9746ac74a8b",
+          "page_number": null,
+          "document_filename": "leave_policy.md"
+        },
+        {
+          "text": "Office Attendance Requirement\nOffice Attendance Requirement\nHybrid employees must be present in the office at least three days per week,\nincluding one fixed team anchor day set by each department. Fully remote\narrangements require VP-level approval and are reviewed every six months.",
+          "score": 0.0005,
+          "section": "Office Attendance Requirement",
+          "chunk_id": "99980f21-6b43-4830-a39a-8a332d624854",
+          "page_number": null,
+          "document_filename": "remote_work_policy.md"
+        },
+        {
+          "text": "Accounts and Access\nAccounts and Access\nAccess to systems is granted through role-based groups. Managers must review\ntheir team's access quarterly. Access is revoked within 24 hours of an\nemployee's departure, and immediately upon termination for cause.",
+          "score": 0.0004,
+          "section": "Accounts and Access",
+          "chunk_id": "76d63ee7-6b1e-4522-845c-ed569d8e6deb",
+          "page_number": null,
+          "document_filename": "it_policy.md"
+        }
+      ],
+      "question": "How often do production passwords need to be rotated and how long must passwords be?",
+      "trace_id": "f5f5a469-3da6-4b40-b2aa-1a41c8305ae0",
+      "relevancy": {
+        "mode": "llm_judge",
+        "score": 5,
+        "explanation": "The answer directly addresses both aspects of the question: the frequency of password rotation and the minimum length of passwords in a production environment."
+      },
+      "question_id": "b22bb43d-3c54-4025-9243-7f8fbc037a0e",
+      "faithfulness": {
+        "mode": "llm_judge",
+        "faithful": true,
+        "explanation": "Both claims in the ANSWER are directly supported by the CONTEXT. The requirement for production passwords to be rotated every 90 days and the minimum length of 12 characters are both explicitly stated in the provided context.",
+        "supported_claims": 2,
+        "unsupported_claims": 0
+      },
+      "question_type": "multi_hop",
+      "total_latency_ms": 23237.14,
+      "expected_answerable": true,
+      "citation_correctness": {
+        "pass": true,
+        "citation_count": 0,
+        "refusal_behavior_correct": true,
+        "citations_reference_retrieved_chunks": true
+      },
+      "insufficient_evidence": false,
+      "expected_doc_filenames": [
+        "security_policy.md"
+      ],
+      "expected_answer_keywords": [
+        "90",
+        "12"
+      ]
+    },
+    {
+      "model": "qwen2.5:32b",
+      "answer": "The daily meal per diem is 60 USD for domestic travel and 75 USD for international travel.",
+      "context": [
+        {
+          "text": "Meal Per Diem\nMeal Per Diem\nThe daily meal per diem is 60 USD for domestic travel and 75 USD for\ninternational travel. No receipts are required for per diem claims. Team meals\nduring travel follow the per diem of the most senior attendee's destination.",
+          "score": 0.9997,
+          "section": "Meal Per Diem",
+          "chunk_id": "fe4d545c-df1d-4dd4-be22-bf8baafe7da7",
+          "page_number": null,
+          "document_filename": "expense_policy.md"
+        },
+        {
+          "text": "Visas and Documentation\nVisas and Documentation\nVisa fees and required vaccinations are reimbursable with receipts.\n  Passport fees are personal and not reimbursable. The travel desk assists\n  with visa applications; submit requests at least 6 weeks before departure.\n  Meal per diems and hotel caps follow the Expense Policy.",
+          "score": 0.0165,
+          "section": "Visas and Documentation",
+          "chunk_id": "4380b8db-4e34-415d-8450-20c08af56b87",
+          "page_number": null,
+          "document_filename": "travel_policy.html"
+        },
+        {
+          "text": "Accommodation\nAccommodation\nHotel reimbursement is capped at 180 USD per night in domestic cities and 240\nUSD per night in international cities. Higher amounts require pre-approval\nfrom Finance at least 3 working days before booking.",
+          "score": 0.007,
+          "section": "Accommodation",
+          "chunk_id": "dc1f80bd-7cfe-49fc-9728-793b4173188c",
+          "page_number": null,
+          "document_filename": "expense_policy.md"
+        },
+        {
+          "text": "Advance Booking\nAdvance Booking\nDomestic trips should be booked at least 14 days in advance and\n  international trips at least 21 days in advance to secure corporate fares.\n  Changes made within 72 hours of departure require a reason code in the\n  expense system.",
+          "score": 0.0007,
+          "section": "Advance Booking",
+          "chunk_id": "01e88be4-422b-47d7-ba7f-6e5bf1a1070a",
+          "page_number": null,
+          "document_filename": "travel_policy.html"
+        },
+        {
+          "text": "Travel Policy\nTravel Policy",
+          "score": 0.0001,
+          "section": "Travel Policy",
+          "chunk_id": "401f0307-2832-4091-a29f-b4ada014b3f0",
+          "page_number": null,
+          "document_filename": "travel_policy.html"
+        }
+      ],
+      "question": "Compare the meal per diem for domestic versus international travel.",
+      "trace_id": "9cc4d9b5-9304-4c96-bf5a-e529a557eeab",
+      "relevancy": {
+        "mode": "llm_judge",
+        "score": 5,
+        "explanation": "The answer directly compares the meal per diem for domestic and international travel, providing specific amounts that address the question fully."
+      },
+      "question_id": "c33b322c-fcba-4975-98a8-1f0649b5ab79",
+      "faithfulness": {
+        "mode": "llm_judge",
+        "faithful": true,
+        "explanation": "The ANSWER correctly states the meal per diem rates for both domestic and international travel, which are directly supported by the CONTEXT.",
+        "supported_claims": 2,
+        "unsupported_claims": 0
+      },
+      "question_type": "comparison",
+      "total_latency_ms": 12091.4,
+      "expected_answerable": true,
+      "citation_correctness": {
+        "pass": true,
+        "citation_count": 1,
+        "refusal_behavior_correct": true,
+        "citations_reference_retrieved_chunks": true
+      },
+      "insufficient_evidence": false,
+      "expected_doc_filenames": [
+        "expense_policy.md"
+      ],
+      "expected_answer_keywords": [
+        "60",
+        "75",
+        "domestic",
+        "international"
+      ]
+    },
+    {
+      "model": "qwen2.5:32b",
+      "answer": "Primary caregivers are entitled to 16 weeks of fully paid parental leave, while secondary caregivers are entitled to 4 weeks of fully paid parental leave, which may be taken in blocks of no less than one week within 12 months of the child's arrival.",
+      "context": [
+        {
+          "text": "Parental Leave\nParental Leave\nPrimary caregivers are entitled to 16 weeks of fully paid parental leave.\nSecondary caregivers are entitled to 4 weeks of fully paid parental leave,\nwhich may be taken in blocks of no less than one week within 12 months of the\nchild's arrival.",
+          "score": 0.9997,
+          "section": "Parental Leave",
+          "chunk_id": "62366643-17f7-4f8e-8a99-251e8909bab6",
+          "page_number": null,
+          "document_filename": "leave_policy.md"
+        },
+        {
+          "text": "Leave Policy\nLeave Policy",
+          "score": 0.0001,
+          "section": "Leave Policy",
+          "chunk_id": "6372776d-1524-44cd-8acf-be0f1616728c",
+          "page_number": null,
+          "document_filename": "leave_policy.md"
+        },
+        {
+          "text": "Annual Leave Entitlement\nAnnual Leave Entitlement\nFull-time employees are entitled to 22 days of paid annual leave per leave\nyear, accruing at approximately 1.83 days per month of service. This Leave\nPolicy is the authoritative source for leave entitlements and supersedes any\nsummary in other documents.",
+          "score": 0.0,
+          "section": "Annual Leave Entitlement",
+          "chunk_id": "73a1b5a3-420e-4136-9e15-cf2e3dce80bd",
+          "page_number": null,
+          "document_filename": "leave_policy.md"
+        },
+        {
+          "text": "Unpaid Leave\nUnpaid Leave\nUnpaid leave of up to 3 months may be granted for personal, educational, or\nhumanitarian reasons with approval from both the line manager and People\nOperations. Requests must be submitted at least 30 days in advance.",
+          "score": 0.0,
+          "section": "Unpaid Leave",
+          "chunk_id": "f3d1c55c-6cd2-4fa0-9455-b0320eb85062",
+          "page_number": null,
+          "document_filename": "leave_policy.md"
+        },
+        {
+          "text": "Sick Leave\nSick Leave\nEmployees are entitled to 12 paid sick days per year. A medical certificate is\nrequired for any absence longer than three consecutive working days. Sick\nleave does not carry over between years.",
+          "score": 0.0,
+          "section": "Sick Leave",
+          "chunk_id": "1312d38d-016e-45a6-b394-7b69bfdf51bd",
+          "page_number": null,
+          "document_filename": "leave_policy.md"
+        }
+      ],
+      "question": "Compare parental leave for primary and secondary caregivers.",
+      "trace_id": "281f960b-bb3c-44b6-bb16-a745a733b0aa",
+      "relevancy": {
+        "mode": "llm_judge",
+        "score": 5,
+        "explanation": "The answer directly compares the duration of fully paid parental leave for primary and secondary caregivers, which fully addresses the question asked."
+      },
+      "question_id": "d9395645-edca-45e0-be32-56e1c58cafc4",
+      "faithfulness": {
+        "mode": "llm_judge",
+        "faithful": true,
+        "explanation": "The ANSWER correctly states the duration of fully paid parental leave for both primary and secondary caregivers and the conditions for secondary caregivers' leave, all of which are directly supported by the CONTEXT.",
+        "supported_claims": 2,
+        "unsupported_claims": 0
+      },
+      "question_type": "comparison",
+      "total_latency_ms": 16133.88,
+      "expected_answerable": true,
+      "citation_correctness": {
+        "pass": true,
+        "citation_count": 1,
+        "refusal_behavior_correct": true,
+        "citations_reference_retrieved_chunks": true
+      },
+      "insufficient_evidence": false,
+      "expected_doc_filenames": [
+        "leave_policy.md"
+      ],
+      "expected_answer_keywords": [
+        "16",
+        "4",
+        "primary",
+        "secondary"
+      ]
+    },
+    {
+      "model": "qwen2.5:32b",
+      "answer": "No, an employee cannot work fully remotely from another country for two months without written approval from Legal and Payroll, due to permanent-establishment and tax residency rules.",
+      "context": [
+        {
+          "text": "Tax and Legal Residence\nTax and Legal Residence\nEmployees may not work remotely from a different country for more than 30 days\nper calendar year without written approval from Legal and Payroll, due to\npermanent-establishment and tax residency rules.",
+          "score": 0.9925,
+          "section": "Tax and Legal Residence",
+          "chunk_id": "b01edf27-f1e8-4e93-a81f-c9db2dc5d8e0",
+          "page_number": null,
+          "document_filename": "remote_work_policy.md"
+        },
+        {
+          "text": "Remote Work Basics\nRemote Work Basics\nAcme Corp supports flexible working. Employees may work remotely up to two\ndays per week with manager approval, provided they maintain core collaboration\nhours between 10:00 and 16:00 local time. Detailed eligibility rules, home\noffice support, and security requirements are defined in the Remote Work\nPolicy.",
+          "score": 0.3407,
+          "section": "Remote Work Basics",
+          "chunk_id": "0f856c85-3b54-4a8d-b9c7-7c779a7d5662",
+          "page_number": null,
+          "document_filename": "employee_handbook.md"
+        },
+        {
+          "text": "Eligibility\nEligibility\nRemote work is available to all permanent employees after completing their\nprobation period of 90 days. Roles that require physical presence, such as\nfacilities and hardware lab staff, are excluded.",
+          "score": 0.0337,
+          "section": "Eligibility",
+          "chunk_id": "56101813-7cb4-42c0-b3d0-d8b6734421b5",
+          "page_number": null,
+          "document_filename": "remote_work_policy.md"
+        },
+        {
+          "text": "Office Attendance Requirement\nOffice Attendance Requirement\nHybrid employees must be present in the office at least three days per week,\nincluding one fixed team anchor day set by each department. Fully remote\narrangements require VP-level approval and are reviewed every six months.",
+          "score": 0.013,
+          "section": "Office Attendance Requirement",
+          "chunk_id": "99980f21-6b43-4830-a39a-8a332d624854",
+          "page_number": null,
+          "document_filename": "remote_work_policy.md"
+        },
+        {
+          "text": "Home Office Stipend\nHome Office Stipend\nEmployees working remotely at least one day per week receive a one-time home\noffice stipend of 500 USD, usable for desks, chairs, monitors, and lighting.\nInternet costs are reimbursed up to 40 USD per month upon submission of\nreceipts through the expense system.",
+          "score": 0.0046,
+          "section": "Home Office Stipend",
+          "chunk_id": "f42750a7-0a09-47a2-babe-8769db298115",
+          "page_number": null,
+          "document_filename": "remote_work_policy.md"
+        }
+      ],
+      "question": "Can an employee work fully remotely from another country for two months?",
+      "trace_id": "2ec67bb6-5e75-44eb-8187-eab0fe8ffdad",
+      "relevancy": {
+        "mode": "llm_judge",
+        "score": 5,
+        "explanation": "The answer directly addresses the possibility of an employee working remotely from another country for a specified period and includes the necessary conditions (written approval from Legal and Payroll) and reasons (permanent-establishment and tax residency rules) why such a situation requires approv"
+      },
+      "question_id": "823cbb23-0943-4050-ae7c-2205cb202919",
+      "faithfulness": {
+        "mode": "llm_judge",
+        "faithful": true,
+        "explanation": "The ANSWER correctly reflects the information provided in the CONTEXT regarding the need for written approval from Legal and Payroll for working remotely from another country for more than 30 days per calendar year due to permanent-establishment and tax residency rules. There are no unsupported clai",
+        "supported_claims": 1,
+        "unsupported_claims": 0
+      },
+      "question_type": "policy_reasoning",
+      "total_latency_ms": 13965.78,
+      "expected_answerable": true,
+      "citation_correctness": {
+        "pass": true,
+        "citation_count": 1,
+        "refusal_behavior_correct": true,
+        "citations_reference_retrieved_chunks": true
+      },
+      "insufficient_evidence": false,
+      "expected_doc_filenames": [
+        "remote_work_policy.md"
+      ],
+      "expected_answer_keywords": [
+        "30",
+        "approval",
+        "country"
+      ]
+    },
+    {
+      "model": "qwen2.5:32b",
+      "answer": "No, the expense is not allowed without prior approval because it exceeds the 150 USD limit for client entertainment and requires a written business purpose. Additionally, expenses above 500 USD in total require manager pre-approval.",
+      "context": [
+        {
+          "text": "Client Entertainment\nClient Entertainment\nClient entertainment is limited to 150 USD per person per event and requires a\nwritten business purpose. Alcohol may not be expensed for internal team events\nwithout HR approval.",
+          "score": 0.7827,
+          "section": "Client Entertainment",
+          "chunk_id": "bda706e0-2fcc-4ffc-92de-1468e5dc4fe4",
+          "page_number": null,
+          "document_filename": "expense_policy.md"
+        },
+        {
+          "text": "Approval Thresholds\nApproval Thresholds\nExpenses above 500 USD in total require manager pre-approval; expenses above\n2,000 USD require director pre-approval. All approvals must be recorded in the\nexpense system before the cost is incurred, not after.",
+          "score": 0.0646,
+          "section": "Approval Thresholds",
+          "chunk_id": "b6d4b67b-7762-43cf-8e06-0a5ae466d5a8",
+          "page_number": null,
+          "document_filename": "expense_policy.md"
+        },
+        {
+          "text": "Vendors may not offer gifts above 50 USD to any employee. Invitations to vendor-hosted events must\nbe approved by Compliance in advance. This mirrors the employee obligations in the Employee\nHandbook. Annual Review\nActive vendors are reviewed annually for performance, security posture, and contract compliance. Vendors failing two consecutive reviews enter a remediation plan or are retired.",
+          "score": 0.0187,
+          "section": null,
+          "chunk_id": "a19b6e0b-c5c9-4817-a4c3-626ecdee72b6",
+          "page_number": 1,
+          "document_filename": "vendor_guidelines.pdf"
+        },
+        {
+          "text": "Tax and Legal Residence\nTax and Legal Residence\nEmployees may not work remotely from a different country for more than 30 days\nper calendar year without written approval from Legal and Payroll, due to\npermanent-establishment and tax residency rules.",
+          "score": 0.0014,
+          "section": "Tax and Legal Residence",
+          "chunk_id": "b01edf27-f1e8-4e93-a81f-c9db2dc5d8e0",
+          "page_number": null,
+          "document_filename": "remote_work_policy.md"
+        },
+        {
+          "text": "Accommodation\nAccommodation\nHotel reimbursement is capped at 180 USD per night in domestic cities and 240\nUSD per night in international cities. Higher amounts require pre-approval\nfrom Finance at least 3 working days before booking.",
+          "score": 0.0012,
+          "section": "Accommodation",
+          "chunk_id": "dc1f80bd-7cfe-49fc-9728-793b4173188c",
+          "page_number": null,
+          "document_filename": "expense_policy.md"
+        }
+      ],
+      "question": "An employee wants to expense a 250 USD client dinner without prior approval. Is that allowed?",
+      "trace_id": "efbba7cd-8e98-48e6-a39f-7ed2be2f724d",
+      "relevancy": {
+        "mode": "llm_judge",
+        "score": 5,
+        "explanation": "The answer directly addresses the question by stating that the expense is not allowed without prior approval and provides specific reasons related to the amount and company policy."
+      },
+      "question_id": "cb6adb4c-9838-4dff-be4b-65df1e6d4882",
+      "faithfulness": {
+        "mode": "llm_judge",
+        "faithful": false,
+        "explanation": "The claims that the expense exceeds the 150 USD limit for client entertainment and requires a written business purpose are supported. However, the claim that expenses above 500 USD in total require manager pre-approval is not relevant to the 250 USD client dinner expense in question, as the threshol",
+        "supported_claims": 2,
+        "unsupported_claims": 1
+      },
+      "question_type": "policy_reasoning",
+      "total_latency_ms": 15670.25,
+      "expected_answerable": true,
+      "citation_correctness": {
+        "pass": true,
+        "citation_count": 2,
+        "refusal_behavior_correct": true,
+        "citations_reference_retrieved_chunks": true
+      },
+      "insufficient_evidence": false,
+      "expected_doc_filenames": [
+        "expense_policy.md"
+      ],
+      "expected_answer_keywords": [
+        "150",
+        "client entertainment"
+      ]
+    },
+    {
+      "model": "qwen2.5:32b",
+      "answer": "Employees may work remotely up to two days per week with manager approval. They receive a one-time home office stipend of 500 USD for desks, chairs, monitors, and lighting, and internet costs are reimbursed up to 40 USD per month upon submission of receipts.",
+      "context": [
+        {
+          "text": "Remote Work Basics\nRemote Work Basics\nAcme Corp supports flexible working. Employees may work remotely up to two\ndays per week with manager approval, provided they maintain core collaboration\nhours between 10:00 and 16:00 local time. Detailed eligibility rules, home\noffice support, and security requirements are defined in the Remote Work\nPolicy.",
+          "score": 0.9988,
+          "section": "Remote Work Basics",
+          "chunk_id": "0f856c85-3b54-4a8d-b9c7-7c779a7d5662",
+          "page_number": null,
+          "document_filename": "employee_handbook.md"
+        },
+        {
+          "text": "Home Office Stipend\nHome Office Stipend\nEmployees working remotely at least one day per week receive a one-time home\noffice stipend of 500 USD, usable for desks, chairs, monitors, and lighting.\nInternet costs are reimbursed up to 40 USD per month upon submission of\nreceipts through the expense system.",
+          "score": 0.98,
+          "section": "Home Office Stipend",
+          "chunk_id": "f42750a7-0a09-47a2-babe-8769db298115",
+          "page_number": null,
+          "document_filename": "remote_work_policy.md"
+        },
+        {
+          "text": "Office Attendance Requirement\nOffice Attendance Requirement\nHybrid employees must be present in the office at least three days per week,\nincluding one fixed team anchor day set by each department. Fully remote\narrangements require VP-level approval and are reviewed every six months.",
+          "score": 0.912,
+          "section": "Office Attendance Requirement",
+          "chunk_id": "99980f21-6b43-4830-a39a-8a332d624854",
+          "page_number": null,
+          "document_filename": "remote_work_policy.md"
+        },
+        {
+          "text": "Purpose\nPurpose\nThis policy defines who may work remotely, how often, and the support Acme\nCorp provides for home offices. It exists to balance flexibility with\ncollaboration and information security.",
+          "score": 0.2527,
+          "section": "Purpose",
+          "chunk_id": "eb87ee76-13a4-419e-a1e4-b6d1476ea534",
+          "page_number": null,
+          "document_filename": "remote_work_policy.md"
+        },
+        {
+          "text": "Tax and Legal Residence\nTax and Legal Residence\nEmployees may not work remotely from a different country for more than 30 days\nper calendar year without written approval from Legal and Payroll, due to\npermanent-establishment and tax residency rules.",
+          "score": 0.0282,
+          "section": "Tax and Legal Residence",
+          "chunk_id": "b01edf27-f1e8-4e93-a81f-c9db2dc5d8e0",
+          "page_number": null,
+          "document_filename": "remote_work_policy.md"
+        }
+      ],
+      "question": "How many remote days per week are allowed and what home office support is provided?",
+      "trace_id": "ed7b8130-0ff4-4e8c-a61a-12dcb739938a",
+      "relevancy": {
+        "mode": "llm_judge",
+        "score": 5,
+        "explanation": "The answer fully addresses both parts of the question: the number of remote days allowed per week and the home office support provided."
+      },
+      "question_id": "41b586dc-86ce-4081-a432-0921ca899d8c",
+      "faithfulness": {
+        "mode": "llm_judge",
+        "faithful": false,
+        "explanation": "The claims that employees may work remotely up to two days per week with manager approval, receive a one-time home office stipend of 500 USD for desks, chairs, monitors, and lighting, and that internet costs are reimbursed up to 40 USD per month upon submission of receipts are supported. However, th",
+        "supported_claims": 3,
+        "unsupported_claims": 1
+      },
+      "question_type": "cross_document",
+      "total_latency_ms": 20923.09,
+      "expected_answerable": true,
+      "citation_correctness": {
+        "pass": true,
+        "citation_count": 2,
+        "refusal_behavior_correct": true,
+        "citations_reference_retrieved_chunks": true
+      },
+      "insufficient_evidence": false,
+      "expected_doc_filenames": [
+        "remote_work_policy.md",
+        "employee_handbook.md"
+      ],
+      "expected_answer_keywords": [
+        "stipend",
+        "500",
+        "office"
+      ]
+    },
+    {
+      "model": "qwen2.5:32b",
+      "answer": "The standard payment terms for vendors are net 45 days from invoice receipt. Invoices must reference a purchase order number. Early-payment discounts of 2 percent or more are automatically accepted by Accounts Payable.",
+      "context": [
+        {
+          "text": "Vendor Guidelines\nThese guidelines define how Acme Corp selects, onboards, and manages vendors. They apply to all\ncontracts above 5,000 USD in annual value. Vendor Registration\nProspective vendors must register in the procurement portal, provide a W-9 or equivalent tax form,\ncertificates of insurance, and two customer references. Registration review takes up to 15 working\ndays. Security Assessment\nAll vendors handling Confidential or Restricted data must complete a security questionnaire and pass a\nthird-party risk assessment before contract signature. Vendors with system access must sign the Data\nProcessing Addendum and enforce multi-factor authentication for all named accounts. Payment Terms\nStandard payment terms are net 45 days from invoice receipt. Invoices must reference a purchase\norder number; invoices without one are returned. Early-payment discounts of 2 percent or more are\nautomatically accepted by Accounts Payable. Gifts and Hospitality\nVendors may not offer gifts above 50 USD to any employee. Invitations to vendor-hosted events must\nbe approved by Compliance in advance. This mirrors the employee obligations in the Employee\nHandbook.",
+          "score": 0.9036,
+          "section": null,
+          "chunk_id": "44c6ac98-7fbb-4f23-8c07-d255bc4f5ee1",
+          "page_number": 1,
+          "document_filename": "vendor_guidelines.pdf"
+        },
+        {
+          "text": "Vendors may not offer gifts above 50 USD to any employee. Invitations to vendor-hosted events must\nbe approved by Compliance in advance. This mirrors the employee obligations in the Employee\nHandbook. Annual Review\nActive vendors are reviewed annually for performance, security posture, and contract compliance. Vendors failing two consecutive reviews enter a remediation plan or are retired.",
+          "score": 0.0014,
+          "section": null,
+          "chunk_id": "a19b6e0b-c5c9-4817-a4c3-626ecdee72b6",
+          "page_number": 1,
+          "document_filename": "vendor_guidelines.pdf"
+        },
+        {
+          "text": "Third-Party Access\nThird-Party Access\nVendors requiring system access must sign the standard Data Processing\nAddendum, use named accounts with multi-factor authentication, and undergo\nquarterly access reviews by the Security team.",
+          "score": 0.0001,
+          "section": "Third-Party Access",
+          "chunk_id": "a320fbc3-dba8-49b8-91a5-fbe4176844da",
+          "page_number": null,
+          "document_filename": "security_policy.md"
+        },
+        {
+          "text": "Code of Conduct\nCode of Conduct\nAll employees are expected to act with integrity, respect, and professionalism.\nHarassment, discrimination, and retaliation are strictly prohibited and are\ngrounds for disciplinary action up to and including termination. Gifts from\nvendors above 50 USD must be declined or reported to Compliance.",
+          "score": 0.0,
+          "section": "Code of Conduct",
+          "chunk_id": "ebd1adfd-fe4a-4603-bfd2-5b62c519f263",
+          "page_number": null,
+          "document_filename": "employee_handbook.md"
+        },
+        {
+          "text": "Multi-Factor Authentication\nMulti-Factor Authentication\nMulti-factor authentication is mandatory for all corporate accounts. Hardware\nsecurity keys are issued to engineers with production access. SMS-based\nfactors are not accepted for privileged accounts.",
+          "score": 0.0,
+          "section": "Multi-Factor Authentication",
+          "chunk_id": "46e30187-e436-4a2f-b4b6-3ef48f4f2e85",
+          "page_number": null,
+          "document_filename": "security_policy.md"
+        }
+      ],
+      "question": "What are the payment terms for vendors and what discount is auto-accepted?",
+      "trace_id": "0b96668c-c1f2-497d-8e34-24b6698dae44",
+      "relevancy": {
+        "mode": "llm_judge",
+        "score": 5,
+        "explanation": "The answer fully addresses the question by providing the payment terms and specifying the discount policy for early payments."
+      },
+      "question_id": "c2435ee7-834c-4fe4-9c0b-d925af184c55",
+      "faithfulness": {
+        "mode": "llm_judge",
+        "faithful": true,
+        "explanation": "All claims in the answer are directly supported by the context provided.",
+        "supported_claims": 3,
+        "unsupported_claims": 0
+      },
+      "question_type": "cross_document",
+      "total_latency_ms": 17123.95,
+      "expected_answerable": true,
+      "citation_correctness": {
+        "pass": true,
+        "citation_count": 1,
+        "refusal_behavior_correct": true,
+        "citations_reference_retrieved_chunks": true
+      },
+      "insufficient_evidence": false,
+      "expected_doc_filenames": [
+        "vendor_guidelines.pdf"
+      ],
+      "expected_answer_keywords": [
+        "net 45",
+        "2 percent"
+      ]
+    },
+    {
+      "model": "qwen2.5:32b",
+      "answer": "I couldn't find sufficient evidence in the available documents to answer this question.",
+      "context": [
+        {
+          "text": "Vendor Guidelines\nThese guidelines define how Acme Corp selects, onboards, and manages vendors. They apply to all\ncontracts above 5,000 USD in annual value. Vendor Registration\nProspective vendors must register in the procurement portal, provide a W-9 or equivalent tax form,\ncertificates of insurance, and two customer references. Registration review takes up to 15 working\ndays. Security Assessment\nAll vendors handling Confidential or Restricted data must complete a security questionnaire and pass a\nthird-party risk assessment before contract signature. Vendors with system access must sign the Data\nProcessing Addendum and enforce multi-factor authentication for all named accounts. Payment Terms\nStandard payment terms are net 45 days from invoice receipt. Invoices must reference a purchase\norder number; invoices without one are returned. Early-payment discounts of 2 percent or more are\nautomatically accepted by Accounts Payable. Gifts and Hospitality\nVendors may not offer gifts above 50 USD to any employee. Invitations to vendor-hosted events must\nbe approved by Compliance in advance. This mirrors the employee obligations in the Employee\nHandbook.",
+          "score": 0.0394,
+          "section": null,
+          "chunk_id": "44c6ac98-7fbb-4f23-8c07-d255bc4f5ee1",
+          "page_number": 1,
+          "document_filename": "vendor_guidelines.pdf"
+        },
+        {
+          "text": "Security Policy\nSecurity Policy",
+          "score": 0.0002,
+          "section": "Security Policy",
+          "chunk_id": "af604c34-2d55-42f8-bb42-7775258bfbfb",
+          "page_number": null,
+          "document_filename": "security_policy.md"
+        },
+        {
+          "text": "IT Policy\nIT Policy",
+          "score": 0.0001,
+          "section": "IT Policy",
+          "chunk_id": "0bf60b36-b59f-4298-a50b-fe4fcfdccbf0",
+          "page_number": null,
+          "document_filename": "it_policy.md"
+        },
+        {
+          "text": "Vendors may not offer gifts above 50 USD to any employee. Invitations to vendor-hosted events must\nbe approved by Compliance in advance. This mirrors the employee obligations in the Employee\nHandbook. Annual Review\nActive vendors are reviewed annually for performance, security posture, and contract compliance. Vendors failing two consecutive reviews enter a remediation plan or are retired.",
+          "score": 0.0001,
+          "section": null,
+          "chunk_id": "a19b6e0b-c5c9-4817-a4c3-626ecdee72b6",
+          "page_number": 1,
+          "document_filename": "vendor_guidelines.pdf"
+        },
+        {
+          "text": "Third-Party Access\nThird-Party Access\nVendors requiring system access must sign the standard Data Processing\nAddendum, use named accounts with multi-factor authentication, and undergo\nquarterly access reviews by the Security team.",
+          "score": 0.0001,
+          "section": "Third-Party Access",
+          "chunk_id": "a320fbc3-dba8-49b8-91a5-fbe4176844da",
+          "page_number": null,
+          "document_filename": "security_policy.md"
+        }
+      ],
+      "question": "What is the company's policy on cryptocurrency payments to vendors?",
+      "trace_id": "7780d7bb-2a2f-43d8-9d2b-80518ab9315a",
+      "relevancy": {
+        "mode": "llm_judge",
+        "score": 2,
+        "explanation": "The answer is relevant as it addresses the question about the company's policy on cryptocurrency payments to vendors. However, it does not provide the specific policy information requested, only stating that there is insufficient evidence to answer the question. This indicates a lack of direct infor"
+      },
+      "question_id": "f0406f66-0f45-4719-8a02-94d0bd8d1f49",
+      "faithfulness": {
+        "mode": "rule",
+        "reason": "expected_refusal",
+        "faithful": true,
+        "explanation": "Canonical refusal on a question marked unanswerable."
+      },
+      "question_type": "negative",
+      "total_latency_ms": 4111.62,
+      "expected_answerable": false,
+      "citation_correctness": {
+        "pass": true,
+        "citation_count": 0,
+        "refusal_behavior_correct": true,
+        "citations_reference_retrieved_chunks": true
+      },
+      "insufficient_evidence": true,
+      "expected_doc_filenames": [],
+      "expected_answer_keywords": []
+    },
+    {
+      "model": "qwen2.5:32b",
+      "answer": "I couldn't find sufficient evidence in the available documents to answer this question.",
+      "context": [],
+      "question": "What is the CEO's favorite color?",
+      "trace_id": "967e72b4-99b0-49c1-9319-65adf51e6e4c",
+      "relevancy": {
+        "mode": "llm_judge",
+        "score": 2,
+        "explanation": "The answer acknowledges the inability to provide the specific information requested but does not offer any relevant information or alternative insights about the CEO's favorite color."
+      },
+      "question_id": "4dbca34f-7794-4ad7-9537-09746fc8b498",
+      "faithfulness": {
+        "mode": "rule",
+        "reason": "expected_refusal",
+        "faithful": true,
+        "explanation": "Canonical refusal on a question marked unanswerable."
+      },
+      "question_type": "negative",
+      "total_latency_ms": 3810.28,
+      "expected_answerable": false,
+      "citation_correctness": {
+        "pass": true,
+        "citation_count": 0,
+        "refusal_behavior_correct": true,
+        "citations_reference_retrieved_chunks": true
+      },
+      "insufficient_evidence": true,
+      "expected_doc_filenames": [],
+      "expected_answer_keywords": []
+    },
+    {
+      "model": "qwen2.5:32b",
+      "answer": "I couldn't find sufficient evidence in the available documents to answer this question.",
+      "context": [
+        {
+          "text": "Security Policy\nSecurity Policy",
+          "score": 0.0,
+          "section": "Security Policy",
+          "chunk_id": "af604c34-2d55-42f8-bb42-7775258bfbfb",
+          "page_number": null,
+          "document_filename": "security_policy.md"
+        },
+        {
+          "text": "IT Policy\nIT Policy",
+          "score": 0.0,
+          "section": "IT Policy",
+          "chunk_id": "0bf60b36-b59f-4298-a50b-fe4fcfdccbf0",
+          "page_number": null,
+          "document_filename": "it_policy.md"
+        },
+        {
+          "text": "Welcome\nWelcome\nWelcome to Acme Corp. This handbook summarises the core policies that apply to\nall full-time employees. Where this handbook conflicts with a dedicated policy\ndocument, the dedicated policy document is considered authoritative, and the\ndiscrepancy should be reported to People Operations.",
+          "score": 0.0,
+          "section": "Welcome",
+          "chunk_id": "24517a55-90fa-4852-8607-7db7b8555eb8",
+          "page_number": null,
+          "document_filename": "employee_handbook.md"
+        },
+        {
+          "text": "Travel Policy\nTravel Policy",
+          "score": 0.0,
+          "section": "Travel Policy",
+          "chunk_id": "401f0307-2832-4091-a29f-b4ada014b3f0",
+          "page_number": null,
+          "document_filename": "travel_policy.html"
+        },
+        {
+          "text": "Remote Work Policy\nRemote Work Policy",
+          "score": 0.0,
+          "section": "Remote Work Policy",
+          "chunk_id": "b7d15ef2-e4be-40e5-94aa-cf25b0c32fc5",
+          "page_number": null,
+          "document_filename": "remote_work_policy.md"
+        }
+      ],
+      "question": "How many ping-pong tables are in the Bangalore office?",
+      "trace_id": "291e0423-c7e3-46cf-931a-05c03d6a35b0",
+      "relevancy": {
+        "mode": "llm_judge",
+        "score": 2,
+        "explanation": "The answer acknowledges the inability to provide a specific number of ping-pong tables in the Bangalore office, but it does not address why it couldn't find the information or suggest any alternative ways to find out the number of ping-pong tables. It is somewhat relevant as it directly refers to th"
+      },
+      "question_id": "628cbae7-7837-4028-b72c-636e5976c764",
+      "faithfulness": {
+        "mode": "rule",
+        "reason": "expected_refusal",
+        "faithful": true,
+        "explanation": "Canonical refusal on a question marked unanswerable."
+      },
+      "question_type": "negative",
+      "total_latency_ms": 4276.31,
+      "expected_answerable": false,
+      "citation_correctness": {
+        "pass": true,
+        "citation_count": 0,
+        "refusal_behavior_correct": true,
+        "citations_reference_retrieved_chunks": true
+      },
+      "insufficient_evidence": true,
+      "expected_doc_filenames": [],
+      "expected_answer_keywords": []
+    },
+    {
+      "model": "qwen2.5:32b",
+      "answer": "I couldn't find sufficient evidence in the available documents to answer this question.",
+      "context": [
+        {
+          "text": "Welcome\nWelcome\nWelcome to Acme Corp. This handbook summarises the core policies that apply to\nall full-time employees. Where this handbook conflicts with a dedicated policy\ndocument, the dedicated policy document is considered authoritative, and the\ndiscrepancy should be reported to People Operations.",
+          "score": 0.0052,
+          "section": "Welcome",
+          "chunk_id": "24517a55-90fa-4852-8607-7db7b8555eb8",
+          "page_number": null,
+          "document_filename": "employee_handbook.md"
+        },
+        {
+          "text": "IT Policy\nIT Policy",
+          "score": 0.0002,
+          "section": "IT Policy",
+          "chunk_id": "0bf60b36-b59f-4298-a50b-fe4fcfdccbf0",
+          "page_number": null,
+          "document_filename": "it_policy.md"
+        },
+        {
+          "text": "Security Policy\nSecurity Policy",
+          "score": 0.0001,
+          "section": "Security Policy",
+          "chunk_id": "af604c34-2d55-42f8-bb42-7775258bfbfb",
+          "page_number": null,
+          "document_filename": "security_policy.md"
+        },
+        {
+          "text": "Expense Policy\nExpense Policy",
+          "score": 0.0,
+          "section": "Expense Policy",
+          "chunk_id": "72032508-324e-4706-b203-b688960e4c0f",
+          "page_number": null,
+          "document_filename": "expense_policy.md"
+        },
+        {
+          "text": "Scope\nScope\nThis policy applies to all employees, contractors, and third parties who\naccess Acme Corp information systems, whether on premises or remote.",
+          "score": 0.0,
+          "section": "Scope",
+          "chunk_id": "a29fe8cf-e09d-4587-ae43-47b2c85ac1a5",
+          "page_number": null,
+          "document_filename": "security_policy.md"
+        }
+      ],
+      "question": "What about the previous one?",
+      "trace_id": "d1ace8a6-da7b-4c38-a146-f35c0dd08cae",
+      "relevancy": {
+        "mode": "llm_judge",
+        "score": 1,
+        "explanation": "The answer does not address the question because it lacks context about what 'the previous one' refers to and provides no substantive information or analysis."
+      },
+      "question_id": "b4a94d1c-c7de-479c-b828-2a30b7839543",
+      "faithfulness": {
+        "mode": "llm_judge",
+        "faithful": true,
+        "explanation": "The answer correctly states that there is insufficient evidence in the provided context to answer the question, as the question itself does not provide enough information or context to make any factual claims.",
+        "supported_claims": 0,
+        "unsupported_claims": 0
+      },
+      "question_type": "ambiguous",
+      "total_latency_ms": 5136.77,
+      "expected_answerable": true,
+      "citation_correctness": {
+        "pass": false,
+        "citation_count": 0,
+        "refusal_behavior_correct": false,
+        "citations_reference_retrieved_chunks": true
+      },
+      "insufficient_evidence": true,
+      "expected_doc_filenames": [],
+      "expected_answer_keywords": []
+    },
+    {
+      "model": "qwen2.5:32b",
+      "answer": "New employees must complete Security Awareness (2 hours), Code of Conduct (1 hour), and Data Protection Basics (1 hour) during their first week.",
+      "context": [
+        {
+          "text": "First Week\nFirst Week\nDuring the first week, new employees complete mandatory training: Security Awareness (2 hours), Code of Conduct (1 hour), and Data Protection Basics (1 hour). Manager one-to-ones happen twice in the first week, and a buddy from the team is assigned for the first month.",
+          "score": 0.9999,
+          "section": "First Week",
+          "chunk_id": "7d1d68f2-c832-4979-8ff1-28af5edc633d",
+          "page_number": null,
+          "document_filename": "onboarding_guide.docx"
+        },
+        {
+          "text": "First 90 Days Checklist\nFirst 90 Days Checklist\nComplete security and conduct training\nSet up the password manager and enrol MFA devices\nMeet all direct stakeholders introduced by your manager\nAgree on goals for the first quarter",
+          "score": 0.1071,
+          "section": "First 90 Days Checklist",
+          "chunk_id": "52c73a2f-3381-4a2f-936a-1d15bed2dccb",
+          "page_number": null,
+          "document_filename": "onboarding_guide.docx"
+        },
+        {
+          "text": "Onboarding Guide\nOnboarding Guide\nThis guide walks new Acme Corp employees through their first 90 days.",
+          "score": 0.03,
+          "section": "Onboarding Guide",
+          "chunk_id": "b1d5cc93-b3f2-4209-87a9-937f5e321edf",
+          "page_number": null,
+          "document_filename": "onboarding_guide.docx"
+        },
+        {
+          "text": "Office Attendance Requirement\nOffice Attendance Requirement\nHybrid employees must be present in the office at least three days per week,\nincluding one fixed team anchor day set by each department. Fully remote\narrangements require VP-level approval and are reviewed every six months.",
+          "score": 0.0269,
+          "section": "Office Attendance Requirement",
+          "chunk_id": "99980f21-6b43-4830-a39a-8a332d624854",
+          "page_number": null,
+          "document_filename": "remote_work_policy.md"
+        },
+        {
+          "text": "Requesting Leave\nRequesting Leave\nAll leave requests must be submitted through the HR portal at least 5 working\ndays before the intended start date for periods up to one week, and 20 working\ndays in advance for longer periods. Managers respond within 5 working days.",
+          "score": 0.0077,
+          "section": "Requesting Leave",
+          "chunk_id": "5ae5a1d8-9dc3-4483-9084-e9746ac74a8b",
+          "page_number": null,
+          "document_filename": "leave_policy.md"
+        }
+      ],
+      "question": "Which training must new employees complete during their first week and how long does each take?",
+      "trace_id": "6ffb4035-176a-4a63-988a-c93b93c484d9",
+      "relevancy": {
+        "mode": "llm_judge",
+        "score": 5,
+        "explanation": "The answer fully addresses the question by listing the required trainings and their durations for new employees in their first week."
+      },
+      "question_id": "9b92cb4f-d4aa-4344-9bbe-84cd9f4cee7a",
+      "faithfulness": {
+        "mode": "llm_judge",
+        "faithful": true,
+        "explanation": "All the claims in the answer are directly supported by the context provided.",
+        "supported_claims": 3,
+        "unsupported_claims": 0
+      },
+      "question_type": "multi_hop",
+      "total_latency_ms": 13432.48,
+      "expected_answerable": true,
+      "citation_correctness": {
+        "pass": true,
+        "citation_count": 1,
+        "refusal_behavior_correct": true,
+        "citations_reference_retrieved_chunks": true
+      },
+      "insufficient_evidence": false,
+      "expected_doc_filenames": [
+        "onboarding_guide.docx"
+      ],
+      "expected_answer_keywords": [
+        "Security Awareness",
+        "Code of Conduct",
+        "Data Protection"
+      ]
+    }
+  ]
+}
