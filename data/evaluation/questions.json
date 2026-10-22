@@ -1,0 +1,141 @@
+[
+  {
+    "question": "How many days of paid annual leave are employees entitled to?",
+    "question_type": "direct",
+    "expected_doc_filenames": ["leave_policy.md"],
+    "expected_answer_keywords": ["22", "annual leave"],
+    "expected_answerable": true,
+    "notes": "Leave Policy is authoritative; the handbook's 18 days is a deliberate conflict for demos."
+  },
+  {
+    "question": "What is the daily meal per diem for domestic and international travel?",
+    "question_type": "numerical",
+    "expected_doc_filenames": ["expense_policy.md"],
+    "expected_answer_keywords": ["60", "75", "per diem"],
+    "expected_answerable": true
+  },
+  {
+    "question": "How quickly must suspected security incidents be reported?",
+    "question_type": "direct",
+    "expected_doc_filenames": ["security_policy.md"],
+    "expected_answer_keywords": ["24", "security@acme.test"],
+    "expected_answerable": true
+  },
+  {
+    "question": "How long is the probation period for new employees?",
+    "question_type": "direct",
+    "expected_doc_filenames": ["onboarding_guide.docx", "remote_work_policy.md"],
+    "expected_answer_keywords": ["90", "probation"],
+    "expected_answerable": true
+  },
+  {
+    "question": "What is the maximum hotel reimbursement per night for international cities?",
+    "question_type": "numerical",
+    "expected_doc_filenames": ["expense_policy.md"],
+    "expected_answer_keywords": ["240", "hotel"],
+    "expected_answerable": true
+  },
+  {
+    "question": "How much does the company match in retirement contributions?",
+    "question_type": "numerical",
+    "expected_doc_filenames": ["benefits_summary.txt"],
+    "expected_answer_keywords": ["5", "401(k)", "match"],
+    "expected_answerable": true
+  },
+  {
+    "question": "For flights, when is premium economy permitted and when does business class require approval?",
+    "question_type": "multi_hop",
+    "expected_doc_filenames": ["travel_policy.html"],
+    "expected_answer_keywords": ["6 hours", "premium economy", "business class", "VP"],
+    "expected_answerable": true
+  },
+  {
+    "question": "How often do production passwords need to be rotated and how long must passwords be?",
+    "question_type": "multi_hop",
+    "expected_doc_filenames": ["security_policy.md"],
+    "expected_answer_keywords": ["90", "12"],
+    "expected_answerable": true
+  },
+  {
+    "question": "Compare the meal per diem for domestic versus international travel.",
+    "question_type": "comparison",
+    "expected_doc_filenames": ["expense_policy.md"],
+    "expected_answer_keywords": ["60", "75", "domestic", "international"],
+    "expected_answerable": true
+  },
+  {
+    "question": "Compare parental leave for primary and secondary caregivers.",
+    "question_type": "comparison",
+    "expected_doc_filenames": ["leave_policy.md"],
+    "expected_answer_keywords": ["16", "4", "primary", "secondary"],
+    "expected_answerable": true
+  },
+  {
+    "question": "Can an employee work fully remotely from another country for two months?",
+    "question_type": "policy_reasoning",
+    "expected_doc_filenames": ["remote_work_policy.md"],
+    "expected_answer_keywords": ["30", "approval", "country"],
+    "expected_answerable": true,
+    "notes": "Requires combining the 30-day rule with the approval requirement."
+  },
+  {
+    "question": "An employee wants to expense a 250 USD client dinner without prior approval. Is that allowed?",
+    "question_type": "policy_reasoning",
+    "expected_doc_filenames": ["expense_policy.md"],
+    "expected_answer_keywords": ["150", "client entertainment"],
+    "expected_answerable": true
+  },
+  {
+    "question": "How many remote days per week are allowed and what home office support is provided?",
+    "question_type": "cross_document",
+    "expected_doc_filenames": ["remote_work_policy.md", "employee_handbook.md"],
+    "expected_answer_keywords": ["stipend", "500", "office"],
+    "expected_answerable": true,
+    "notes": "Handbook says up to 2 remote days; policy requires 3 office days — near-conflict to surface."
+  },
+  {
+    "question": "What are the payment terms for vendors and what discount is auto-accepted?",
+    "question_type": "cross_document",
+    "expected_doc_filenames": ["vendor_guidelines.pdf"],
+    "expected_answer_keywords": ["net 45", "2 percent"],
+    "expected_answerable": true
+  },
+  {
+    "question": "What is the company's policy on cryptocurrency payments to vendors?",
+    "question_type": "negative",
+    "expected_doc_filenames": [],
+    "expected_answer_keywords": [],
+    "expected_answerable": false,
+    "notes": "Corpus never mentions cryptocurrency — must produce a refusal."
+  },
+  {
+    "question": "What is the CEO's favorite color?",
+    "question_type": "negative",
+    "expected_doc_filenames": [],
+    "expected_answer_keywords": [],
+    "expected_answerable": false
+  },
+  {
+    "question": "How many ping-pong tables are in the Bangalore office?",
+    "question_type": "negative",
+    "expected_doc_filenames": [],
+    "expected_answer_keywords": [],
+    "expected_answerable": false,
+    "notes": "Office facilities inventory is not covered by any document."
+  },
+  {
+    "question": "What about the previous one?",
+    "question_type": "ambiguous",
+    "expected_doc_filenames": [],
+    "expected_answer_keywords": [],
+    "expected_answerable": true,
+    "notes": "Pronoun-only follow-up; used to exercise conversation-aware query rewriting (no retrieval label)."
+  },
+  {
+    "question": "Which training must new employees complete during their first week and how long does each take?",
+    "question_type": "multi_hop",
+    "expected_doc_filenames": ["onboarding_guide.docx"],
+    "expected_answer_keywords": ["Security Awareness", "Code of Conduct", "Data Protection"],
+    "expected_answerable": true
+  }
+]
