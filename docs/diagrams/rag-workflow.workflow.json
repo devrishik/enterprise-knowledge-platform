@@ -1,0 +1,437 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Agentic RAG Query Workflow",
+    "subtitle": "Enterprise Knowledge Intelligence Platform — LangGraph pipeline",
+    "locale": "en",
+    "output": "docs/diagrams/rag-workflow.html",
+    "animation": "trace",
+    "visual_preset": "signal-flow",
+    "quality_profile": "standard",
+    "views": [
+      {
+        "id": "happy",
+        "label": "Happy path",
+        "focus": [
+          "question",
+          "analyzer",
+          "dense",
+          "lexical",
+          "fuse",
+          "rerank",
+          "validator",
+          "generator",
+          "cite",
+          "final"
+        ]
+      },
+      {
+        "id": "refusal",
+        "label": "No-evidence refusal",
+        "focus": [
+          "validator",
+          "final",
+          "trace"
+        ]
+      },
+      {
+        "id": "retry",
+        "label": "Weak-retrieval retry",
+        "focus": [
+          "validator",
+          "retry",
+          "dense"
+        ]
+      },
+      {
+        "id": "regen",
+        "label": "Citation regeneration",
+        "focus": [
+          "generator",
+          "cite"
+        ]
+      },
+      {
+        "id": "obs",
+        "label": "Observability",
+        "focus": [
+          "final",
+          "trace"
+        ]
+      }
+    ]
+  },
+  "lanes": [
+    {
+      "id": "client",
+      "label": "Client · React UI"
+    },
+    {
+      "id": "agent",
+      "label": "LangGraph Agent"
+    },
+    {
+      "id": "retrieval",
+      "label": "Hybrid Retrieval · PostgreSQL"
+    },
+    {
+      "id": "safety",
+      "label": "Grounding & Safety"
+    },
+    {
+      "id": "observability",
+      "label": "Observability"
+    },
+    {
+      "id": "fallbacks",
+      "label": "Fallbacks & Refusals",
+      "variant": "exception"
+    }
+  ],
+  "phases": [
+    {
+      "id": "understand",
+      "label": "Understand",
+      "fromCol": 0,
+      "toCol": 0
+    },
+    {
+      "id": "retrieve",
+      "label": "Retrieve",
+      "fromCol": 1,
+      "toCol": 1,
+      "variant": "emphasis"
+    },
+    {
+      "id": "rank",
+      "label": "Fuse + Rerank",
+      "fromCol": 2,
+      "toCol": 3
+    },
+    {
+      "id": "gate",
+      "label": "Evidence Gate + Generate",
+      "fromCol": 4,
+      "toCol": 4
+    },
+    {
+      "id": "respond",
+      "label": "Cite + Respond",
+      "fromCol": 5,
+      "toCol": 5,
+      "variant": "dashed"
+    }
+  ],
+  "groups": [
+    {
+      "id": "parallel_retrieval",
+      "label": "dense ∥ lexical (tenant-scoped)",
+      "lane": "retrieval",
+      "fromCol": 1,
+      "toCol": 2,
+      "variant": "emphasis"
+    },
+    {
+      "id": "self_correction",
+      "label": "bounded self-correction",
+      "lane": "fallbacks",
+      "fromCol": 1,
+      "toCol": 4,
+      "variant": "security"
+    }
+  ],
+  "mainPath": [
+    "question",
+    "analyzer",
+    "dense",
+    "fuse",
+    "rerank",
+    "validator",
+    "generator",
+    "cite",
+    "final"
+  ],
+  "nodes": [
+    {
+      "id": "question",
+      "lane": "client",
+      "col": 0,
+      "type": "frontend",
+      "width": 120,
+      "label": "User Question",
+      "sublabel": "POST /api/query",
+      "icon": "person"
+    },
+    {
+      "id": "analyzer",
+      "lane": "agent",
+      "col": 0,
+      "type": "backend",
+      "width": 130,
+      "yOffset": -48,
+      "label": "Query Analyzer",
+      "sublabel": "rewrite · decompose · gate",
+      "icon": "active"
+    },
+    {
+      "id": "rewriter",
+      "lane": "agent",
+      "col": 0,
+      "type": "backend",
+      "width": 130,
+      "yOffset": 48,
+      "label": "Query Rewriter",
+      "sublabel": "self-contained query",
+      "icon": "neutral",
+      "tag": "conditional"
+    },
+    {
+      "id": "dense",
+      "lane": "retrieval",
+      "col": 1,
+      "type": "database",
+      "width": 130,
+      "yOffset": -50,
+      "label": "Dense Retrieval",
+      "sublabel": "pgvector cosine · k=20",
+      "icon": "database"
+    },
+    {
+      "id": "lexical",
+      "lane": "retrieval",
+      "col": 1,
+      "type": "database",
+      "width": 130,
+      "yOffset": 50,
+      "label": "Lexical Retrieval",
+      "sublabel": "PG FTS ts_rank_cd · k=20",
+      "icon": "database"
+    },
+    {
+      "id": "fuse",
+      "lane": "retrieval",
+      "col": 2,
+      "type": "database",
+      "width": 120,
+      "label": "RRF Fusion",
+      "sublabel": "rank fusion · k=60",
+      "icon": "none"
+    },
+    {
+      "id": "rerank",
+      "lane": "retrieval",
+      "col": 3,
+      "type": "backend",
+      "width": 150,
+      "label": "Cross-Encoder Rerank",
+      "sublabel": "ms-marco MiniLM · k=5",
+      "icon": "success"
+    },
+    {
+      "id": "validator",
+      "lane": "safety",
+      "col": 4,
+      "type": "security",
+      "width": 130,
+      "label": "Context Validator",
+      "sublabel": "relevance gate 0.35",
+      "icon": "security",
+      "tag": "gate"
+    },
+    {
+      "id": "generator",
+      "lane": "agent",
+      "col": 4,
+      "type": "backend",
+      "width": 140,
+      "label": "Grounded Generation",
+      "sublabel": "JSON answer + citations",
+      "icon": "backend"
+    },
+    {
+      "id": "cite",
+      "lane": "safety",
+      "col": 5,
+      "type": "security",
+      "width": 140,
+      "label": "Citation Validator",
+      "sublabel": "server-built · drop invalid",
+      "icon": "security"
+    },
+    {
+      "id": "final",
+      "lane": "client",
+      "col": 5,
+      "type": "frontend",
+      "width": 150,
+      "label": "Final Response",
+      "sublabel": "answer · citations · confidence",
+      "icon": "success",
+      "tag": "answer | refusal"
+    },
+    {
+      "id": "trace",
+      "lane": "observability",
+      "col": 5,
+      "type": "database",
+      "width": 130,
+      "label": "Query Trace",
+      "sublabel": "latency · scores · tokens",
+      "icon": "clock"
+    },
+    {
+      "id": "retry",
+      "lane": "fallbacks",
+      "col": 1,
+      "type": "security",
+      "width": 150,
+      "label": "Retry Alternative",
+      "sublabel": "reformulate query once",
+      "icon": "waiting",
+      "tag": "≤1 retry"
+    }
+  ],
+  "edges": [
+    {
+      "from": "question",
+      "to": "analyzer",
+      "label": "ask",
+      "variant": "emphasis",
+      "role": "main"
+    },
+    {
+      "from": "analyzer",
+      "to": "rewriter",
+      "label": "needs rewrite / sub-queries",
+      "role": "branch"
+    },
+    {
+      "from": "analyzer",
+      "to": "dense",
+      "label": "clear query",
+      "role": "main"
+    },
+    {
+      "from": "analyzer",
+      "to": "lexical",
+      "role": "main"
+    },
+    {
+      "from": "rewriter",
+      "to": "dense",
+      "label": "effective query",
+      "role": "branch"
+    },
+    {
+      "from": "rewriter",
+      "to": "lexical",
+      "role": "branch"
+    },
+    {
+      "from": "dense",
+      "to": "fuse",
+      "role": "main"
+    },
+    {
+      "from": "lexical",
+      "to": "fuse",
+      "role": "main"
+    },
+    {
+      "from": "fuse",
+      "to": "rerank",
+      "label": "top 10 candidates",
+      "variant": "emphasis",
+      "role": "main"
+    },
+    {
+      "from": "rerank",
+      "to": "validator",
+      "label": "top 5 context",
+      "variant": "emphasis",
+      "role": "main"
+    },
+    {
+      "from": "validator",
+      "to": "generator",
+      "label": "evidence sufficient",
+      "variant": "emphasis",
+      "role": "main"
+    },
+    {
+      "from": "validator",
+      "to": "retry",
+      "label": "weak + retries left",
+      "variant": "security",
+      "role": "error"
+    },
+    {
+      "from": "retry",
+      "to": "dense",
+      "label": "reformulated query",
+      "variant": "security",
+      "role": "return"
+    },
+    {
+      "from": "validator",
+      "to": "final",
+      "label": "insufficient → grounded refusal",
+      "variant": "security",
+      "role": "error"
+    },
+    {
+      "from": "generator",
+      "to": "cite",
+      "label": "JSON answer",
+      "role": "main"
+    },
+    {
+      "from": "cite",
+      "to": "generator",
+      "label": "invalid refs → regenerate (≤1)",
+      "role": "branch"
+    },
+    {
+      "from": "cite",
+      "to": "final",
+      "variant": "emphasis",
+      "role": "main"
+    },
+    {
+      "from": "final",
+      "to": "trace",
+      "label": "persist trace + tokens",
+      "role": "async"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "Grounding contract",
+      "items": [
+        "The model only picks context block numbers; every citation field is rebuilt server-side from retrieved chunks",
+        "Evidence below the relevance gate produces an explicit refusal, never a guess",
+        "Conflicting sources are reported together with all conflicting citations"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Hybrid retrieval",
+      "items": [
+        "Dense (pgvector cosine) and lexical (PostgreSQL FTS) run in parallel — always tenant-scoped",
+        "Reciprocal Rank Fusion combines ranks, immune to incomparable score scales",
+        "A local cross-encoder re-scores the fused candidates before generation"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Bounded self-correction",
+      "items": [
+        "Weak retrieval retries once with a reformulated query, then refuses",
+        "Invalid citations trigger one bounded regeneration",
+        "Every node's latency, scores and token usage land in the query trace"
+      ]
+    }
+  ]
+}
