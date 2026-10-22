@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment / secrets
+.env
+.env.local
+*.pem
+
+# Node
+node_modules/
+frontend/dist/
+
+# Models cache
+.cache/
+
+# OS / editor
+.DS_Store
+Thumbs.db/
+.idea/
+.vscode/
+*.swp
+*.tsbuildinfo
+
+# Local logs
+*.log
+
+# Local databases / artifacts
+*.sqlite3
+*.db

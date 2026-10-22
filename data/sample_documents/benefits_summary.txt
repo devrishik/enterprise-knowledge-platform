@@ -1,0 +1,40 @@
+ACME CORP BENEFITS SUMMARY
+===========================
+
+This plain-text summary gives an overview of the benefits offered to full-time
+employees of Acme Corp. Enrolment happens during onboarding and during the
+annual open enrolment window each November.
+
+HEALTH INSURANCE
+
+Acme Corp offers a default Preferred Provider Organisation (PPO) health plan
+covering employees and their dependents. The company pays 80 percent of the
+employee premium and 60 percent of dependent premiums. Dental and vision
+coverage are included at no additional cost. The annual deductible is 500 USD
+for in-network care.
+
+RETIREMENT
+
+Employees are auto-enrolled in the 401(k) retirement plan at a 5 percent
+contribution rate. Acme Corp matches 100 percent of the first 5 percent of
+contributions, effectively doubling that portion of savings. Vesting is
+immediate.
+
+LIFE AND DISABILITY INSURANCE
+
+Group life insurance of two times annual salary and long-term disability
+coverage at 60 percent of salary are provided at no cost. Supplemental coverage
+can be purchased during open enrolment.
+
+WELLNESS
+
+The wellness benefit reimburses 300 USD per calendar year for gym memberships,
+fitness equipment, or wellness programs. The Employee Assistance Program
+provides 8 confidential counselling sessions per issue per year.
+
+LEARNING AND DEVELOPMENT
+
+Each employee has an annual learning budget of 1,000 USD for courses,
+conferences, and books, subject to manager approval. Degree programmes have a
+separate tuition assistance cap of 5,000 USD per year after one full year of
+service.

@@ -1,0 +1,59 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ekip
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d ekip"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+    ports:
+      - "5432:5432"
+
+  backend:
+    build:
+      context: ./backend
+    environment:
+      EKIP_ENVIRONMENT: docker
+      EKIP_DATABASE_URL: postgresql+psycopg://postgres:postgres@postgres:5432/ekip
+      EKIP_VECTOR_BACKEND: pgvector
+      EKIP_LLM_PROVIDER: ${EKIP_LLM_PROVIDER:-openai}
+      EKIP_OPENAI_API_KEY: ${EKIP_OPENAI_API_KEY:-}
+      EKIP_LLM_MODEL: ${EKIP_LLM_MODEL:-gpt-4o-mini}
+      EKIP_EMBEDDING_PROVIDER: sentence_transformers
+      EKIP_EMBEDDING_MODEL: sentence-transformers/all-MiniLM-L6-v2
+      EKIP_EMBEDDING_DIM: "384"
+      EKIP_RERANKER_PROVIDER: crossencoder
+      EKIP_RERANKER_MODEL: cross-encoder/ms-marco-MiniLM-L-6-v2
+      EKIP_SEED_DEMO_DATA: "true"
+      EKIP_CORS_ORIGINS: http://localhost:8080,http://127.0.0.1:8080
+      EKIP_LOG_LEVEL: INFO
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    # First start downloads the embedding + reranker models from HuggingFace
+    # (~200 MB) and loads them; give it time before marking healthy.
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:8000/api/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 300s
+
+  frontend:
+    build:
+      context: ./frontend
+    depends_on:
+      - backend
+    ports:
+      - "8080:80"
+
+volumes:
+  pgdata:

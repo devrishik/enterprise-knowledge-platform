@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "28bf75eb-ef2c-4c04-b1aa-7cf9864a7863",
+  "status": "current",
+  "command": "deliver",
+  "type": "workflow",
+  "input": "C:\\Users\\prana\\OneDrive\\Desktop\\COLLEGE PROJECTS\\RAG\\enterprise-knowledge-platform\\docs\\diagrams\\rag-workflow.workflow.json",
+  "output": "C:\\Users\\prana\\OneDrive\\Desktop\\COLLEGE PROJECTS\\RAG\\enterprise-knowledge-platform\\docs\\diagrams\\rag-workflow.html",
+  "specification": {
+    "sha256": "4a67679d045a290632209d57a3982bcc7fa5bfc77e41b823ff2229c0cad8b9d7",
+    "bytes": 9844
+  },
+  "artifact": {
+    "sha256": "de525b307248de642e355cb34708596269e3ba25cebc01fd10d8567630c43659",
+    "bytes": 775172
+  }
+}
